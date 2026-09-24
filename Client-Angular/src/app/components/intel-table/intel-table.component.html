@@ -1,0 +1,32 @@
+  <table class="table table-striped table-hover align-middle">
+    <thead>
+      <tr>
+        <th>Modelo</th>
+        <th>Generación</th>
+        <th>Núcleos / Hilos</th>
+        <th>Frecuencia máx.</th>
+        <th>Socket</th>
+        <th>Año</th>
+        <th>Overclock</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (processor of processors; track processor.id) {
+        <tr>
+          <td>{{ processor.model }}</td>
+          <td>{{ processor.generation }}</td>
+          <td>{{ processor.cores }} / {{ processor.threads }}</td>
+          <td>{{ processor.maxBoostGHz }} GHz</td>
+          <td>{{ processor.socket }}</td>
+          <td>{{ processor.releaseYear }}</td>
+          <td>
+            <dsb-badge-atom
+              [text]="processor.unlocked ? 'Desbloqueado' : 'Bloqueado'"
+              [type]="processor.unlocked ? 'success' : 'secondary'"
+              typeText="text-white">
+            </dsb-badge-atom>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
