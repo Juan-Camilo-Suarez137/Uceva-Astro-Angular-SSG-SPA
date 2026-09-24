@@ -17,7 +17,7 @@ export interface IntelProcessor {
   model: string;
 
   /** Serie a la que pertenece el procesador */
-  series: IntelSeries;
+  generation: string;
 
   /** Cantidad de núcleos físicos */
   cores: number;
@@ -28,8 +28,12 @@ export interface IntelProcessor {
   /** Frecuencia turbo máxima en GHz */
   maxBoostGHz: number;
 
+  socket: string;
+
   /** Año de lanzamiento */
   releaseYear: number;
+
+  unlocked: boolean;
 }
 
 /**
@@ -38,4 +42,3 @@ export interface IntelProcessor {
  * @remarks
  * Se utiliza principalmente para mapear badges de colores en la UI.
  */
-export type IntelSeries = 'Core i3' | 'Core i5' | 'Core i7' | 'Core i9' | 'Core Ultra';

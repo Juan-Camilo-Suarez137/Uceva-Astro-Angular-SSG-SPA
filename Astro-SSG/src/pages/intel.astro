@@ -1,16 +1,6 @@
 ---
 import Layout from '@layouts/MainLayout.astro';
 import { INTEL_PROCESSORS } from '@data/Intel';
-import type { IntelSeries } from '@interfaces/Intel';
-
-/** Color de Bootstrap del badge según la serie (mismos colores que en Angular) */
-const seriesBadge: Record<IntelSeries, string> = {
-  'Core i3': 'secondary',
-  'Core i5': 'success',
-  'Core i7': 'primary',
-  'Core i9': 'danger',
-  'Core Ultra': 'dark',
-};
 ---
 
 <Layout title="Intel">
@@ -21,24 +11,28 @@ const seriesBadge: Record<IntelSeries, string> = {
       <thead>
         <tr>
           <th>Modelo</th>
-          <th>Serie</th>
+          <th>Generación</th>
           <th>Núcleos / Hilos</th>
           <th>Frecuencia máx.</th>
+          <th>Socket</th>
           <th>Año</th>
+          <th>Overclock</th>
         </tr>
       </thead>
       <tbody>
         {INTEL_PROCESSORS.map((processor) => (
           <tr>
             <td>{processor.model}</td>
-            <td>
-              <span class={`badge bg-${seriesBadge[processor.series]} text-white`}>
-                {processor.series}
-              </span>
-            </td>
+            <td>{processor.generation}</td>
             <td>{processor.cores} / {processor.threads}</td>
             <td>{processor.maxBoostGHz} GHz</td>
+            <td>{processor.socket}</td>
             <td>{processor.releaseYear}</td>
+            <td>
+              <span class={`badge bg-${processor.unlocked ? 'success' : 'secondary'} text-white`}>
+                {processor.unlocked ? 'Desbloqueado' : 'Bloqueado'}
+              </span>
+            </td>
           </tr>
         ))}
       </tbody>
