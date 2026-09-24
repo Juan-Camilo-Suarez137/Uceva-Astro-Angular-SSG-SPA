@@ -1,0 +1,47 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { INTEL_PROCESSORS } from '@data/Intel';
+import type { IntelSeries } from '@interfaces/Intel';
+
+/** Color de Bootstrap del badge según la serie (mismos colores que en Angular) */
+const seriesBadge: Record<IntelSeries, string> = {
+  'Core i3': 'secondary',
+  'Core i5': 'success',
+  'Core i7': 'primary',
+  'Core i9': 'danger',
+  'Core Ultra': 'dark',
+};
+---
+
+<Layout title="Intel">
+  <h1 class="mb-4">Procesadores Intel</h1>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+      <thead>
+        <tr>
+          <th>Modelo</th>
+          <th>Serie</th>
+          <th>Núcleos / Hilos</th>
+          <th>Frecuencia máx.</th>
+          <th>Año</th>
+        </tr>
+      </thead>
+      <tbody>
+        {INTEL_PROCESSORS.map((processor) => (
+          <tr>
+            <td>{processor.model}</td>
+            <td>
+              <span class={`badge bg-${seriesBadge[processor.series]} text-white`}>
+                {processor.series}
+              </span>
+            </td>
+            <td>{processor.cores} / {processor.threads}</td>
+            <td>{processor.maxBoostGHz} GHz</td>
+            <td>{processor.releaseYear}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</Layout>
