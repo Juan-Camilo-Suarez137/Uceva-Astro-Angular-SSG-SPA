@@ -48,6 +48,8 @@ export const routes: Routes = [
    */
   { path: 'date', component: DatePage },
 
+  { path: 'intel', component: IntelPage },
+
   /**
    * Ruta comodín.
    *
@@ -56,8 +58,4 @@ export const routes: Routes = [
    * automáticamente a la ruta de usuarios.
    */
   { path: '**', redirectTo: 'users' },
-
-  
-  
-  { path: 'intel', component: IntelPage },
 ];
