@@ -1,0 +1,41 @@
+---
+import Layout from '@layouts/MainLayout.astro';
+import { INTEL_PROCESSORS } from '@data/Intel';
+---
+
+<Layout title="Intel">
+  <h1 class="mb-4">Procesadores Intel</h1>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-hover align-middle">
+      <thead>
+        <tr>
+          <th>Modelo</th>
+          <th>Generación</th>
+          <th>Núcleos / Hilos</th>
+          <th>Frecuencia máx.</th>
+          <th>Socket</th>
+          <th>Año</th>
+          <th>Overclock</th>
+        </tr>
+      </thead>
+      <tbody>
+        {INTEL_PROCESSORS.map((processor) => (
+          <tr>
+            <td>{processor.model}</td>
+            <td>{processor.generation}</td>
+            <td>{processor.cores} / {processor.threads}</td>
+            <td>{processor.maxBoostGHz} GHz</td>
+            <td>{processor.socket}</td>
+            <td>{processor.releaseYear}</td>
+            <td>
+              <span class={`badge bg-${processor.unlocked ? 'success' : 'secondary'} text-white`}>
+                {processor.unlocked ? 'Desbloqueado' : 'Bloqueado'}
+              </span>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</Layout>
