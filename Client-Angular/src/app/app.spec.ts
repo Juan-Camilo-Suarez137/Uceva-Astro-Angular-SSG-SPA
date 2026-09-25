@@ -36,6 +36,8 @@ describe('App', () => {
         { text: 'Usuarios', url: '/users' },
         { text: 'Productos', url: '/products' },
         { text: 'Fecha', url: '/date' },
+        { text: 'Intel', url: '/intel' },
+        { text: 'AMD Ryzen', url: '/ryzen' },
       ]
     });
   });
