@@ -20,8 +20,7 @@ import { RyzenService } from '../../services/ryzen/ryzen.service';
 @Component({
   selector: 'app-ryzen.pages',
   imports: [AlertComponent, RyzenTableComponent],
-  templateUrl: './ryzen.pages.html',
-  styleUrl: './ryzen.pages.scss',
+  templateUrl: './ryzen.pages.html'
 })
 export class RyzenPages {
   /**

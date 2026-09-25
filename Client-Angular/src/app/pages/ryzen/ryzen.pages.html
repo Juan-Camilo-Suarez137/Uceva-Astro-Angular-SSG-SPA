@@ -1,15 +1,15 @@
 @switch(state){
 
     @case('loading'){
-        <app-alert alertState="loading" text="Cargando Productos..." ></app-alert>
+        <app-alert alertState="loading" text="Cargando Procesadores Ryzen..." ></app-alert>
     }
 
     @case('error'){
-        <app-alert alertState="error" text="Error al Cargar los Productos" ></app-alert>
+        <app-alert alertState="error" text="Error al Cargar los Procesadores Ryzen" ></app-alert>
     }
 
     @case('success'){
-        <app-ryzen-table [products]="processors" ></app-ryzen-table>
+        <app-ryzen-table [processors]="processors" ></app-ryzen-table>
     }
 
 }

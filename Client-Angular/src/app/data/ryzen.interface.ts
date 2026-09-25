@@ -14,7 +14,7 @@ import { RyzenProcessor } from '../interfaces/ryzen.interface';
  * @type {RyzenProcessor[]}
  */
 
-export const ryzenProcessors: RyzenProcessor[] = [
+export const RYZENPROCESSORS: RyzenProcessor[] = [
   {
     id: 1,
     model: 'Ryzen 5 5600X',
