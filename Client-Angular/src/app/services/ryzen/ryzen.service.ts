@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { RyzenProcessor } from '../../interfaces/ryzen.interface';
-import { RYZENPROCESSORS } from '../../data/ryzen.interface';
+import { RYZEN_PROCESSORS } from '../../data/ryzen.interface';
 
 /**
  * Servicio encargado de la gestión de los datos del procesador ryzen.
@@ -37,6 +37,6 @@ export class RyzenService {
    * ```
    */
   getAllRyzenProcessors(): Observable<RyzenProcessor[]> {
-    return of(RYZENPROCESSORS);
+    return of(RYZEN_PROCESSORS);
   }
 }
