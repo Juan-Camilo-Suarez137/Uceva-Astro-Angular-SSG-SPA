@@ -1,0 +1,15 @@
+@switch(state){
+
+    @case('loading'){
+        <app-alert alertState="loading" text="Cargando Procesadores Mac..." ></app-alert>
+    }
+
+    @case('error'){
+        <app-alert alertState="error" text="Error al Cargar los Procesadores Mac" ></app-alert>
+    }
+
+    @case('success'){
+        <app-mac-table [processors]="processors" ></app-mac-table>
+    }
+
+}
