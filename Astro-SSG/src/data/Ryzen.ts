@@ -1,4 +1,4 @@
-import { RyzenProcessor } from '../interfaces/ryzen.interface';
+import { RyzenProcessor } from "@interfaces/Ryzen";
 
 /**
  * Listado de procesadores AMD Ryzen.
@@ -14,7 +14,7 @@ import { RyzenProcessor } from '../interfaces/ryzen.interface';
  * @type {RyzenProcessor[]}
  */
 
-export const RYZENPROCESSORS: RyzenProcessor[] = [
+export const RYZEN_PROCESSORS: RyzenProcessor[] = [
   {
     id: 1,
     model: 'Ryzen 5 5600X',
