@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RyzenTableComponent } from './ryzen-table.component';
-import { RYZENPROCESSORS } from '../../data/ryzen.interface';
+import { RYZEN_PROCESSORS } from '../../data/ryzen.interface';
 
 describe('RyzenTableComponent', () => {
   let component: RyzenTableComponent;
@@ -22,15 +22,15 @@ describe('RyzenTableComponent', () => {
   });
 
   it('should render one row per processor', () => {
-    component.processors = RYZENPROCESSORS;
+    component.processors = RYZEN_PROCESSORS;
     fixture.detectChanges();
 
     const rows = fixture.nativeElement.querySelectorAll('tbody tr');
-    expect(rows.length).toBe(RYZENPROCESSORS.length);
+    expect(rows.length).toBe(RYZEN_PROCESSORS.length);
   });
 
   it('should render the processor data', () => {
-    component.processors = RYZENPROCESSORS;
+    component.processors = RYZEN_PROCESSORS;
     fixture.detectChanges();
 
     const text = fixture.nativeElement.textContent;
