@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RyzenTableComponent } from './ryzen-table.component';
-import { RYZEN_PROCESSORS } from '../../data/ryzen.interface';
+import { RYZEN_MOCK } from '../../mocks/ryzen.mocks';
 
-describe('RyzenTableComponent', () => {
+describe('Componente de tabla Ryzen', () => {
   let component: RyzenTableComponent;
   let fixture: ComponentFixture<RyzenTableComponent>;
 
@@ -17,26 +17,26 @@ describe('RyzenTableComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('debería crear el componente', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render one row per processor', () => {
-    component.processors = RYZEN_PROCESSORS;
+  it('debería renderizar una fila por cada procesador', () => {
+    component.processors = RYZEN_MOCK;
     fixture.detectChanges();
 
     const rows = fixture.nativeElement.querySelectorAll('tbody tr');
-    expect(rows.length).toBe(RYZEN_PROCESSORS.length);
+    expect(rows.length).toBe(RYZEN_MOCK.length);
   });
 
-  it('should render the processor data', () => {
-    component.processors = RYZEN_PROCESSORS;
+  it('debería renderizar los datos de los procesadores', () => {
+    component.processors = RYZEN_MOCK;
     fixture.detectChanges();
 
     const text = fixture.nativeElement.textContent;
-    expect(text).toContain('Ryzen 5 5600X');
-    expect(text).toContain('Zen 3');
-    expect(text).toContain('AM5');
-    expect(text).toContain('5.7');
+    expect(text).toContain(RYZEN_MOCK[0].model);
+    expect(text).toContain(RYZEN_MOCK[0].architecture);
+    expect(text).toContain(RYZEN_MOCK[1].socket);
+    expect(text).toContain(String(RYZEN_MOCK[1].maxBoostGHz));
   });
 });
