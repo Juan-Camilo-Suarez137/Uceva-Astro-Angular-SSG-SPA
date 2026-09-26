@@ -53,14 +53,14 @@ export class MacPages {
   ngOnInit(): void {
     this.state = 'loading';
     this.macService.getAllMacProcessors().subscribe({
-      next: (processors) => {
+      next: (processors: MacProcessor[]) => {
         this.processors = processors;
         this.state = 'success';
       },
-      error: (error) => {
-        console.error(error)
+      error: (error: unknown) => {
+        console.error(error);
         this.state = 'error';
       },
-    })
+    });
   }
 }
