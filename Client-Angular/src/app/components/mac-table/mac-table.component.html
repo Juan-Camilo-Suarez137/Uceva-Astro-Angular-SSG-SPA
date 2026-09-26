@@ -1,0 +1,33 @@
+
+    
+        
+            ID
+            Modelo
+            Familia de chip
+            Núcleos CPU
+            Núcleos GPU
+            Frecuencia máx.
+            Proceso
+            Año
+            Media Engine
+        
+    
+    
+        @for (processor of processors; track processor.id) {
+            
+                {{ processor.id }}
+                {{ processor.model }}
+                {{ processor.chipFamily }}
+                {{ processor.cores }}
+                {{ processor.gpuCores }}
+                {{ processor.maxClockGHz }} GHz
+                {{ processor.process }}
+                {{ processor.releaseYear }}
+                
+                    
+                    
+                
+            
+        }
+    
+
