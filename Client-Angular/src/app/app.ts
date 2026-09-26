@@ -62,6 +62,7 @@ export class App {
       { text: 'Fecha', url: '/date' },
       { text: 'Intel', url: '/intel' },
       { text: 'AMD Ryzen', url: '/ryzen' },
+      { text: 'Apple Mac', url: '/mac' },
     ]
   };
 }
