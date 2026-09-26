@@ -34,7 +34,7 @@ export class MacService {
    * });
    * ```
    */
-  getAllMacProcessors(): Observable {
+  getAllMacProcessors(): Observable<MacProcessor[]> {
     return of(MAC_PROCESSORS);
   }
 }

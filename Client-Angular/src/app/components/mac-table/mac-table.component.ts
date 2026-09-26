@@ -30,7 +30,7 @@ export class MacTableComponent {
    * Se utiliza para asignar colores según si el chip incluye motor de
    * medios dedicado (ProRes) o no.
    */
-  mediaEngineMap: Record = {
+  mediaEngineMap: Record<'yes' | 'no', BadgeType> = {
     yes: 'success',
     no: 'secondary',
   };

@@ -1,33 +1,37 @@
 
-    
-        
-            ID
-            Modelo
-            Familia de chip
-            Núcleos CPU
-            Núcleos GPU
-            Frecuencia máx.
-            Proceso
-            Año
-            Media Engine
-        
-    
-    
-        @for (processor of processors; track processor.id) {
-            
-                {{ processor.id }}
-                {{ processor.model }}
-                {{ processor.chipFamily }}
-                {{ processor.cores }}
-                {{ processor.gpuCores }}
-                {{ processor.maxClockGHz }} GHz
-                {{ processor.process }}
-                {{ processor.releaseYear }}
-                
-                    
-                    
-                
-            
-        }
-    
-
+<table class="table table-striped table-hover align-middle">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Modelo</th>
+      <th>Familia de chip</th>
+      <th>Núcleos CPU</th>
+      <th>Núcleos GPU</th>
+      <th>Frecuencia máx.</th>
+      <th>Proceso</th>
+      <th>Año</th>
+      <th>Media Engine</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (processor of processors; track processor.id) {
+      <tr>
+        <td>{{ processor.id }}</td>
+        <td>{{ processor.model }}</td>
+        <td>{{ processor.chipFamily }}</td>
+        <td>{{ processor.cores }}</td>
+        <td>{{ processor.gpuCores }}</td>
+        <td>{{ processor.maxClockGHz }} GHz</td>
+        <td>{{ processor.process }}</td>
+        <td>{{ processor.releaseYear }}</td>
+        <td>
+          <dsb-badge-atom
+            [text]="processor.hasMediaEngine ? 'Sí' : 'No'"
+            [type]="mediaEngineMap[processor.hasMediaEngine ? 'yes' : 'no']"
+            typeText="text-white">
+          </dsb-badge-atom>
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
