@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { RyzenService } from './ryzen.service';
-import { RYZENPROCESSORS } from '../../data/ryzen.interface';
+import { RYZEN_PROCESSORS } from '../../data/ryzen.interface';
 
 describe('RyzenService', () => {
   let service: RyzenService;
@@ -16,7 +16,7 @@ describe('RyzenService', () => {
 
   it('should return the Ryzen processors', (done) => {
     service.getAllRyzenProcessors().subscribe((processors) => {
-      expect(processors).toEqual(RYZENPROCESSORS);
+      expect(processors).toEqual(RYZEN_PROCESSORS);
       done();
     });
   });

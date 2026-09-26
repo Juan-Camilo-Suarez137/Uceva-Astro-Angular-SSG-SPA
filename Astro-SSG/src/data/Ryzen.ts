@@ -1,4 +1,4 @@
-import { RyzenProcessor } from '../interfaces/ryzen.interface';
+import { RyzenProcessor } from "@interfaces/Ryzen";
 
 /**
  * Listado de procesadores AMD Ryzen.
