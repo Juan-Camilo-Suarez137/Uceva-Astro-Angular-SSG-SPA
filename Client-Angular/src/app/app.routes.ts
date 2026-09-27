@@ -2,6 +2,9 @@ import { Routes } from '@angular/router';
 import { DatePage } from './pages/date/date.page';
 import { ProductsPage } from './pages/products/products.page';
 import { UsersPage } from './pages/users/users.page';
+import { IntelPage } from './pages/intel/intel.page';
+import { RyzenPages } from './pages/ryzen/ryzen.pages';
+import { MacPages } from './pages/mac/mac.pages';
 
 /**
  * Definición de las rutas principales de la aplicación.
@@ -46,6 +49,33 @@ export const routes: Routes = [
    * de mostrar la fecha actual del sistema.
    */
   { path: 'date', component: DatePage },
+
+   /**
+   * Ruta de procesadores Ryzen.
+   *
+   * @remarks
+   * Renderiza el componente `RyzenPages`, encargado
+   * de mostrar y gestionar el listado de procesadores Ryzen.
+   */
+  { path: 'ryzen', component: RyzenPages },
+
+  /**
+   * Ruta de procesadores Mac.
+   *
+   * @remarks
+   * Renderiza el componente `MacPages`, encargado
+   * de mostrar y gestionar el listado de procesadores Mac.
+   */
+  { path: 'mac', component: MacPages },
+
+  /**
+   * Ruta de procesadores Ryzen.
+   *
+   * @remarks
+   * Renderiza el componente `IntelPage`, encargado
+   * de mostrar y gestionar el listado de procesadores Intel.
+   */
+  { path: 'intel', component: IntelPage },
 
   /**
    * Ruta comodín.

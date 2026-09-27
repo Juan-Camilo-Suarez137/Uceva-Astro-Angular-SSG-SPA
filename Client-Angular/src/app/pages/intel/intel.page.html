@@ -1,0 +1,11 @@
+@switch (state) {
+  @case ('loading') {
+    <app-alert alertState="loading" text="Cargando procesadores Intel..."></app-alert>
+  }
+  @case ('error') {
+    <app-alert alertState="error" text="No se pudieron cargar los procesadores Intel."></app-alert>
+  }
+  @case ('success') {
+    <app-intel-table [processors]="processors"></app-intel-table>
+  }
+}
